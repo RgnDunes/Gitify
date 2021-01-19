@@ -1,0 +1,74 @@
+.userDetails{
+    box-shadow: 0 7px 17px rgba(0, 0, 0, 0.5);
+    padding: 5%;
+    width: 60%;
+    border-radius: 0 25px 25px 0;
+    margin-top: 5%;
+    flex-direction: column;
+    text-align: right;
+}
+
+.userName{
+    font-weight: bolder;
+    font-size: 120%;
+    color: green;
+}
+
+.joiningDate{
+    font-weight: 100;
+    font-size: 80%;
+}
+
+.date{
+    font-weight: bold;
+    font-size: 90%;
+    color: purple;
+}
+
+.followTitle{
+    font-weight: 100;
+    font-size: 80%;
+}
+
+.followCount{
+    font-weight: bold;
+    font-size: 90%;
+    color: purple;
+}
+
+.divider{
+    font-weight: 900;
+    font-size: 170%;
+    color: orange;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.jobTitle{
+    font-weight: 100;
+    font-size: 80%;
+}
+
+.company{
+    font-weight: bold;
+    font-size: 90%;
+    color: purple;   
+}
+
+.location{
+    font-weight: bold;
+    font-size: 90%;
+    color: purple;
+}
+
+.userName a{
+    text-decoration: none;
+    color: green;
+    transition: all ease 0.4s;
+}
+
+.userName a:hover{
+    text-decoration: none;
+    color: greenyellow;
+    transition: all ease 0.4s;
+}

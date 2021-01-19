@@ -1,0 +1,15 @@
+.avatar-img{
+    filter: grayscale(100%);
+    box-shadow: 0 7px 17px rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    transition: all ease 0.5s;
+    margin-left: 42%;
+    width: 17%;
+    height: auto;
+}
+
+.avatar-img:hover {
+    filter: grayscale(0%);
+    transition: all ease 0.5s;
+}
+
