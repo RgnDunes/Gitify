@@ -1,0 +1,15 @@
+.repoSection{
+    margin-top: 3%;
+}
+
+.repoColumn1{
+    box-shadow: 0 7px 17px rgba(0, 0, 0, 0.5);
+    padding: 5%;
+    border-radius: 0 25px 25px 0;
+}
+
+.repoColumn2{
+    box-shadow: 0 7px 17px rgba(0, 0, 0, 0.5);
+    padding: 5%;
+    border-radius: 25px 0 0 25px;
+}

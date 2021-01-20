@@ -4,6 +4,7 @@ import React, {Component} from 'react';
 import Avatar from './component/Avatar'
 import ScrollMessage from './component/ScrollMessage'
 import UserDetails from './component/UserDetails'
+import RepoSection from './component/repoSection/RepoSection'
 
 var username = "";
 
@@ -64,7 +65,7 @@ class App extends Component{
               console.log("FETCH SUCCESSFULL");
             },
             (error) => {
-              console.log("FETCH FAILED : ",error);
+              console.log("APP FETCH FAILED : ",error);
             }
           )
       }
@@ -74,7 +75,6 @@ class App extends Component{
     }
 
     render(){
-      const { visible } = this.state
         var detailsSection= "";
         var scroll = "";
         if(this.state.showDetails)
@@ -84,9 +84,9 @@ class App extends Component{
             <div>
               <Avatar avatar_url={this.state.avatar_url}/><br/>
               <UserDetails name={this.state.name} created_at={this.state.created_at} username={username} followers={this.state.followers} following={this.state.following} company={this.state.company} location={this.state.location} githubUrl={this.state.html_url}/>
+              <RepoSection username={username}/>
             </div>
           );
-            
         }
         
         return ( 

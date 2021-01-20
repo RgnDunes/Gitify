@@ -1,4 +1,3 @@
-import { Image } from 'semantic-ui-react'
 import React, {Component} from 'react'
 import './Avatar.css'
 
@@ -9,8 +8,7 @@ export default class Avatar extends Component{
     }
     render(){
         return(
-            // <Image className="avatar-img" src={this.props.avatar_url} size='medium' circular />
-            <img className="avatar-img" src={this.props.avatar_url}></img>
+            <img className="avatar-img" src={this.props.avatar_url} alt="Avatar"></img>
         );
     }
 }

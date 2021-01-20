@@ -1,0 +1,71 @@
+.publicRepo{
+    color: greenyellow;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 150%;
+}
+
+.row{
+    box-shadow: 0 7px 17px rgba(0, 0, 0, 0.5);
+    padding: 5%;
+    border-radius: 25px 25px 25px 25px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.repoName{
+    color: orange;
+    text-align: center;
+}
+
+.repoName a{
+    text-decoration: none;
+    color: orange;
+    transition: all ease 0.4s;
+}
+
+.repoName a:hover{
+    text-decoration: none;
+    color: orangered;
+    transition: all ease 0.4s;
+}
+
+.createdAt {
+    text-align: right;
+    font-size: 60%;
+}
+
+.publicRepoDate{
+    color: purple;
+    font-weight: bold;
+    font-size: 130%;
+}
+
+.divider{
+    color: orange;
+    font-weight: bolder;
+}
+
+.publicRepoSize{
+    color: purple;
+    font-weight: bold;
+    font-size: 130%;
+}
+
+.publicRepoDefaultBranch{
+    color: purple;
+    font-weight: bold;
+    font-size: 130%;
+}
+
+.publicRepoDescription{
+    font-size: 90%;
+    color: #ffffff;
+}
+
+.publicRepoDescriptionContent{
+    font-size: 70%;
+    color: #c0c0c0;
+}
