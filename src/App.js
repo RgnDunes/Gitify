@@ -1,5 +1,5 @@
 import './App.css';
-import { Icon, Input, Button } from 'semantic-ui-react'
+import { Icon, Input, Button, Message } from 'semantic-ui-react'
 import React, {Component} from 'react';
 import Avatar from './component/Avatar'
 import ScrollMessage from './component/ScrollMessage'
@@ -13,6 +13,7 @@ class App extends Component{
     {
       super();
       this.state = {
+        username : "",
         showDetails : false,
         login : "",
         avatar_url : "",
@@ -36,7 +37,7 @@ class App extends Component{
     }
 
     fetchUrl = async () => {
-        var url = "https://api.github.com/users/"+username;
+        var url = "https://api.github.com/users/"+this.state.username;
         await fetch(url)
           .then(res => res.json())
           .then(
@@ -63,20 +64,26 @@ class App extends Component{
                 created_at : result['created_at'],
               });
               console.log("FETCH SUCCESSFULL");
+              localStorage.setItem('usernameInvalid', false);
             },
             (error) => {
               console.log("APP FETCH FAILED : ",error);
             }
-          )
+          ).catch(function() {
+            localStorage.setItem('usernameInvalid', true);
+            window.location.href = window.location.href;
+        });
       }
 
-    handleMessage = (e) => {
-        username = e.target.value;
-    }
-
     render(){
+      const handleMessage = (e) => {
+        username = e.target.value;
+        this.setState({username : username});
+      }
+
         var detailsSection= "";
         var scroll = "";
+        var invalidUsername = "No github user exists with that username";
         if(this.state.showDetails)
         {
           scroll = <ScrollMessage/>;
@@ -88,16 +95,34 @@ class App extends Component{
             </div>
           );
         }
+
+        const resetData = () => {
+          console.log("RESET REQUEST ... ");
+          username = "";
+          this.setState({username : ""});
+          this.fetchUrl();
+        }
         
         return ( 
             <div className = "App" >
                 <header className = "App-header" >
+                  <div className="reset">
+                    <Button color = 'red'  size = 'massive' onClick={ resetData }> Reset </Button> 
+                  </div>
+                  <div className="usernameInvalid">
+                  {localStorage.getItem('usernameInvalid')==true ? (
+                    <Message negative>
+                      <Message.Header>{invalidUsername}</Message.Header>
+                    </Message>
+                  ) : ""}
+                  </div>
+                  
                   <div className="fetchForm">
                     <a className = "App-name" href = "#">Gitify </a>
                     <br/> <br/>
                     <Icon disabled name = 'github' size = 'massive'/> 
                     < br/>
-                    <Input className = "App-input" icon = { < Icon name = 'search' inverted circular link/>} onChange = { this.handleMessage } placeholder = 'Github Username' size = 'mini' />
+                    <Input className = "App-input" value={username} icon = { < Icon name = 'search' inverted circular link/>} onChange = { handleMessage } placeholder = 'Github Username' size = 'mini' />
                     <Button color = 'green' size = 'massive' onClick={ this.fetchUrl }> Gitify </Button> 
                     {scroll}
                   </div>          

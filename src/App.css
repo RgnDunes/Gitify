@@ -41,3 +41,15 @@
     font-size: calc(10px + 2vmin);
     color: white;
 }
+
+.reset{
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 5%;
+  margin-right: 5%;
+  text-align: right;
+}
+
+.usernameInvalid{
+    top: 5%;
+}
